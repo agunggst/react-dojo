@@ -1,4 +1,5 @@
 import ButtonLink from "./atoms/ButtonLink";
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return ( 
@@ -7,8 +8,12 @@ const Navbar = () => {
         <h2>React Blog</h2>
       </div>
       <div className="right">
-        <ButtonLink buttonText="Blogs" />
-        <ButtonLink buttonText="New Blog" />
+        <Link to="/">
+          <ButtonLink buttonText="Blogs" />
+        </Link>
+        <Link to="/create">
+          <ButtonLink buttonText="New Blog" />
+        </Link>
       </div>
     </div>
   )

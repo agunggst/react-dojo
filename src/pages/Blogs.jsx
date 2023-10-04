@@ -1,25 +1,29 @@
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BlogList from '../components/BlogList';
+import useFetch from '../hooks/useFetch';
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState([
-    { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
-    { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
-    { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
-  ])
+  const { data: blogs, isLoading, error } = useFetch('http://localhost:8000/blogs')
+  const navigate = useNavigate()
 
   const onDeleteBlog = (blogId) => {
-    setBlogs(blogs.filter(blog => blog.id !== blogId))
+    fetch(`http://localhost:8000/blogs/${blogId}`, { method: 'DELETE' })
+    .then(() => {
+      navigate('/')
+    })
+    .catch(err => console.log(err))
   }
 
   return ( 
     <div className="blogs">
       <h3 className='page-title'>Blogs</h3>
       <div className="blogs-container">
-        <BlogList blogs={blogs} onDeleteBlog={onDeleteBlog}/>
+        {isLoading && <p>Loading...</p> }
+        {error && <p>{ error }</p> }
+        {blogs && <BlogList blogs={blogs} onDeleteBlog={onDeleteBlog} />}
       </div>
     </div>
-  );
+  )
 }
  
-export default Blogs;
+export default Blogs
