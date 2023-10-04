@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-server": "json-server --watch data/blogs.json --port 8000",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -36,6 +37,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "json-server": "^0.17.4"
   }
 }

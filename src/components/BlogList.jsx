@@ -9,7 +9,7 @@ const BlogList = ({ blogs, onDeleteBlog }) => {
             <div className="left">
               <h5>{ blog.title }</h5>
               <p>{ blog.body }</p>
-              <p style={{ color: '#C1D8C3', fontSize: 12 }}>{ blog.author }</p>
+              <p style={{ color: '#C1D8C3', fontSize: 12 }}>by { blog.author }</p>
             </div>
             <ButtonSolid 
               id={blog.id}
