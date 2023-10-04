@@ -1,0 +1,22 @@
+.blog{
+  margin-bottom: 20px;
+  transition: .5s ease-in-out;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blog h5{
+  color: #CD5C08;
+  font-size: 16px;
+}
+.blog p{
+  color: #6A9C89;
+  font-size: 14px;
+}
+.blog:hover{
+  box-shadow: 14px 14px 30px 2px rgba(0,0,0,0.12);
+  -webkit-box-shadow: 14px 14px 30px 2px rgba(0,0,0,0.12);
+  -moz-box-shadow: 14px 14px 30px 2px rgba(0,0,0,0.12);
+}
