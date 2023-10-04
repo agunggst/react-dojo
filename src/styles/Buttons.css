@@ -1,0 +1,23 @@
+.button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+.button-link{
+  transition: 0.3s;
+}
+.button-link:hover{
+  color: #CD5C08;
+}
+.button-solid{
+  background-color: white;
+  color: #CD5C08;
+  border: 1px solid #CD5C08;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.button-solid:hover{
+  background-color: #CD5C08;
+  color: white;
+}
