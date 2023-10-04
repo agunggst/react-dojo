@@ -11,7 +11,7 @@ function App() {
         <Blogs />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
